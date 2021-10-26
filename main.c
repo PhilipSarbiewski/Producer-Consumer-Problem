@@ -22,7 +22,7 @@ void *producer(void *pno)
 {   
     int item;
     for(int i = 0; i < MaxItems; i++) {
-        item = rand(); // Produce an random item
+        item = rand()%100; // Produce an random item
         sem_wait(&empty);
         pthread_mutex_lock(&mutex);
         buffer[in] = item;
